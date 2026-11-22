@@ -39,3 +39,27 @@ if height > 100 and width > 100:
 
 else:
     print("\nImage is too small to access pixel (100, 100).")
+
+# Task 2: Convert Image into Grayscale and HSV
+
+# Convert the original BGR image into grayscale
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+# Convert the original BGR image into HSV
+hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+
+# Save the grayscale image
+cv2.imwrite(os.path.join(BASE_DIR, "output", "gray.jpg"), gray)
+
+# Save the HSV image
+cv2.imwrite(os.path.join(BASE_DIR, "output", "hsv.jpg"), hsv)
+
+# Display grayscale image properties
+print("\n----- Grayscale Image -----")
+print("Shape:", gray.shape)
+
+# Display HSV image properties
+print("\n----- HSV Image -----")
+print("Shape:", hsv.shape)
+
+print("\nGrayscale and HSV images saved successfully.")
